@@ -1,15 +1,15 @@
 input = open("input.txt", "r")
-lines = input.readlines()
-
+lines = [line.strip() for line in input.readlines()]
+#
 counts = []
-temp = 0
+calories = 0
 
 for line in lines:
-    if line.strip():
-        temp += int(line.strip())
+    if line:
+        calories += int(line)
     else:
-        counts.append(temp)
-        temp = 0
+        counts.append(calories)
+        calories = 0
 
 # part 1
 print(max(counts))
